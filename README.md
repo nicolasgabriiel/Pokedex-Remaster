@@ -20,10 +20,10 @@
         -Exibir os dados extraídos da API nos cards Pokemons
             -[x] Exibir Imagem
             -[x] Estilizar Imagem
-            -[ ] Exibir Número
-            -[ ] Estilizar Número
-            -[ ] Exibir Nome
-            -[ ] Estilizar Nome
+            -[x] Exibir Número
+            -[x] Estilizar Número
+            -[x] Exibir Nome
+            -[x] Estilizar Nome
             -[ ] Exibir Tipo
             -[ ] Estilizar Tipo
     -[ ] Estilizar algo que fique faltando nesta tela Home

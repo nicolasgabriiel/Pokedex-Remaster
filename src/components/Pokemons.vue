@@ -1,8 +1,8 @@
 <template>
-    <li class="container-pokemon" v-for="imagem in PokemonImagens" :key="imagem" >
-        <img class="imagem-pokemon" :src="imagem" />
-        <p class="numero-pokemon"></p>
-        <p class="nome-pokemon"></p>
+    <li class="container-pokemon" v-for="indice in IndiceDeBusca" :key="indice" >
+        <img class="imagem-pokemon" :src="PokemonImagens[indice]" />
+        <p class="numero-pokemon">Nº{{ PokemonIds[indice] }}</p>
+        <p class="nome-pokemon">{{ PokemonNames[indice] }}</p>
         <div class="container-tipo">
             <div class="tipo1 ${type[0]}"><span></span></div>
             <div class="tipo2 ${type[1]}"><span></span></div>
@@ -19,7 +19,9 @@ export default defineComponent({
     data(){
         return{
             IndiceDeBusca: 11,
-            PokemonImagens: ['']
+            PokemonImagens: [''],
+            PokemonIds: [''],
+            PokemonNames: ['']
 
         }
     },
@@ -29,8 +31,10 @@ export default defineComponent({
     axios.get(`https://pokeapi.co/api/v2/pokemon/${idPokemon}`)
       .then(Data => {
         let DataPokemon = Data.data;
-        // console.log(DataPokemon.sprites.other['official-artwork'].front_default)
+        // console.log(DataPokemon.id)
         this.PokemonImagens[i] = DataPokemon.sprites.other['official-artwork'].front_default
+        this.PokemonIds[i] =  DataPokemon.id.toString().padStart(3, '0')
+        this.PokemonNames[i] = DataPokemon.name
       })
       .catch(error => {
         console.error(error);
@@ -49,6 +53,7 @@ export default defineComponent({
     border: 8px solid white;
     box-sizing: border-box;
     display: inline-block;
+    font-family: "Flexo-Regular";
 }
 .container-pokemon:hover{
     position: relative;
@@ -61,5 +66,24 @@ export default defineComponent({
     width: 100%;
     margin: 0 auto;
     border-radius: 10px;
+}
+.numero-pokemon{
+    color: #919191;
+    width: 90%;
+    margin: 4px auto;
+    font-size: 12.8px;
+    font-weight: bold;
+    text-align: left;
+}
+.nome-pokemon{
+    color:black;
+    width: 90%;
+    margin: 10px auto;
+    font-size: 20px;
+    text-align: left;
+    font-weight: 500;
+}
+.nome-pokemon::first-letter{
+text-transform: uppercase;
 }
 </style>
