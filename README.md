@@ -14,7 +14,7 @@
     -[x] Estilizar o Background da Página num todo
         -[x] Resolver Bug de barra superior Vazia
 -Cards Pokemons
-    -[ ] Estruturar os cards Pokemons
+    -[x] Estruturar os cards Pokemons
     -Consumo de API
         -[ ] Começar a trazer os dados da API para o projeto
         -Exibir os dados extraídos da API nos cards Pokemons

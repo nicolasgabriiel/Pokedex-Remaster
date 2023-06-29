@@ -12,6 +12,13 @@
         </header><!--        Cabeçalho           -->
 
         <main><!--      Corpo Principal     -->
+          <div class="caixa-principal">
+                        <!--Lista onde são inseridos todos os Pokemons-->
+                        <ul id="lista-pokemon">
+                          <Pokemons/>
+                        </ul>
+                        
+                    </div><!--caixa-principal-->
         </main><!--      Corpo Principal     -->
 
       </div><!--background-dentro-->
@@ -71,13 +78,22 @@
        margin:0 auto;
        border-radius: 0 0 18px 18px;
    }
+   .caixa-principal{
+    width: 50vw;
+    background-color: white;
+    margin:0 auto;
+}
 </style>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import Pokemons from '../components/Pokemons.vue'
 
 export default defineComponent({
   name: 'HomeView',
+  components:{
+    Pokemons
+  }
 });
 </script>
 
