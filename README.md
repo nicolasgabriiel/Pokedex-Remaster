@@ -18,7 +18,7 @@
     -Consumo de API
         -[x] Começar a trazer os dados da API para o projeto
         -Exibir os dados extraídos da API nos cards Pokemons
-            -[ ] Exibir Imagem
+            -[x] Exibir Imagem
             -[ ] Estilizar Imagem
             -[ ] Exibir Número
             -[ ] Estilizar Número
