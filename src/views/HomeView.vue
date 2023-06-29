@@ -14,7 +14,7 @@
         <main><!--      Corpo Principal     -->
           <div class="caixa-principal">
                         <!--Lista onde são inseridos todos os Pokemons-->
-                        <ul id="lista-pokemon">
+                        <ul class="lista-pokemon">
                           <Pokemons/>
                         </ul>
                         
@@ -82,6 +82,10 @@
     width: 50vw;
     background-color: white;
     margin:0 auto;
+}
+.lista-pokemon{
+    text-align: center ;
+
 }
 </style>
 

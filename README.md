@@ -19,7 +19,7 @@
         -[x] Começar a trazer os dados da API para o projeto
         -Exibir os dados extraídos da API nos cards Pokemons
             -[x] Exibir Imagem
-            -[ ] Estilizar Imagem
+            -[x] Estilizar Imagem
             -[ ] Exibir Número
             -[ ] Estilizar Número
             -[ ] Exibir Nome

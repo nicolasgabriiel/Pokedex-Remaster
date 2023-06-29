@@ -1,6 +1,6 @@
 <template>
-    <li class="container-pokemon">
-        <img class="imagem-pokemon" v-for="imagem in PokemonImagens" :key="imagem" :src="imagem" />
+    <li class="container-pokemon" v-for="imagem in PokemonImagens" :key="imagem" >
+        <img class="imagem-pokemon" :src="imagem" />
         <p class="numero-pokemon"></p>
         <p class="nome-pokemon"></p>
         <div class="container-tipo">
@@ -18,7 +18,7 @@ export default defineComponent({
     name: 'Pokemons-Component',
     data(){
         return{
-            IndiceDeBusca: 20,
+            IndiceDeBusca: 11,
             PokemonImagens: ['']
 
         }
@@ -40,4 +40,26 @@ export default defineComponent({
 })
 </script>
 
-<style scoped></style>
+<style scoped>
+.container-pokemon{
+    margin-top: 50px;
+    background-color: white;
+    max-width: 220px;
+    width: calc(48vw /4);
+    border: 8px solid white;
+    box-sizing: border-box;
+    display: inline-block;
+}
+.container-pokemon:hover{
+    position: relative;
+    top: -5px;
+    cursor: pointer;  
+}
+.imagem-pokemon{
+    background-color: #F2F2F2;
+    height: 205px;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+</style>
