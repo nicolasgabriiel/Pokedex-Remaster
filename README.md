@@ -3,11 +3,12 @@
 ### Planejamento
 
 -Estruturação de pastas
-    -[ ] Configurar o Repositório Remoto no GitHub
-    -[ ] Zerar a Página Inicial padrão do Vue
+    -[x] Configurar o Repositório Remoto no GitHub
+    -[x] Zerar a Página Inicial padrão do Vue
     -[ ] Trazer as Imagens para a Pasta do Projeto
     -[ ] Criar uma Vue Router Inicial
     -[ ] Se for usada alguma fonte, Importa-lá
+    -[ ] Zerar o meu CSS
 -Inicio do Projeto
     -[ ] Estruturar a Página Inicial sem os cards dos pokemons
     -[ ] Estilizar o Background da Página num todo
