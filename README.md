@@ -5,7 +5,7 @@
 -Estruturação de pastas
     -[x] Configurar o Repositório Remoto no GitHub
     -[x] Zerar a Página Inicial padrão do Vue
-    -[ ] Trazer as Imagens para a Pasta do Projeto
+    -[x] Trazer as Imagens para a Pasta do Projeto
     -[ ] Criar uma Vue Router Inicial
     -[ ] Se for usada alguma fonte, Importa-lá
     -[ ] Zerar o meu CSS
