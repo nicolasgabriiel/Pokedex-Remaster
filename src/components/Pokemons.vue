@@ -12,14 +12,30 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import axios from 'axios';
+
 export default defineComponent({
-    name: 'Pokemons-Component'
+    name: 'Pokemons-Component',
+    data(){
+        return{
+
+        }
+    },
+    mounted() {
+        for(let i = 1; i <= 12; i++){
+    axios.get(`https://pokeapi.co/api/v2/pokemon/${i}`)
+      .then(Data => {
+        let DataPokemon = Data.data;
+        console.log(DataPokemon.name)
+
+      })
+      .catch(error => {
+        console.error(error);
+      });
+
+      
+  }}
 })
-
-
-
-
-// https://pokeapi.co/api/v2/pokemon/${id}
 </script>
 
 <style scoped></style>
