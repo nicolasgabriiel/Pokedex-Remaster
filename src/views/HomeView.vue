@@ -11,3 +11,14 @@ export default defineComponent({
   name: 'HomeView',
 });
 </script>
+
+<style scoped> 
+  /* Importando Fonte */
+  @font-face {
+    font-family: "Flexo-Regular";
+    src: url(../assets/fonts/Flexo/Flexo-Regular/Flexo-Regular.ttf) format('truetype');
+}
+  .home h1{
+    font-family: "Flexo-Regular";
+  }
+</style>

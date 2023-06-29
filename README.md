@@ -6,8 +6,8 @@
     -[x] Configurar o Repositório Remoto no GitHub
     -[x] Zerar a Página Inicial padrão do Vue
     -[x] Trazer as Imagens para a Pasta do Projeto
-    -[ ] Criar uma Vue Router Inicial
-    -[ ] Se for usada alguma fonte, Importa-lá
+    -[x] Criar uma Vue Router Inicial
+    -[x] Se for usada alguma fonte, Importa-lá
     -[ ] Zerar o meu CSS
 -Inicio do Projeto
     -[ ] Estruturar a Página Inicial sem os cards dos pokemons
