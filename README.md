@@ -8,7 +8,7 @@
     -[x] Trazer as Imagens para a Pasta do Projeto
     -[x] Criar uma Vue Router Inicial
     -[x] Se for usada alguma fonte, Importa-lá
-    -[ ] Zerar o meu CSS
+    -[x] Zerar o meu CSS
 -Inicio do Projeto
     -[ ] Estruturar a Página Inicial sem os cards dos pokemons
     -[ ] Estilizar o Background da Página num todo
