@@ -10,8 +10,9 @@
     -[x] Se for usada alguma fonte, Importa-lá
     -[x] Zerar o meu CSS
 -Inicio do Projeto
-    -[ ] Estruturar a Página Inicial sem os cards dos pokemons
-    -[ ] Estilizar o Background da Página num todo
+    -[x] Estruturar a Página Inicial sem os cards dos pokemons
+    -[x] Estilizar o Background da Página num todo
+        -[ ] Resolver Bug de barra superior Vazia
 -Cards Pokemons
     -[ ] Estruturar os cards Pokemons
     -Consumo de API
