@@ -26,7 +26,7 @@
             -[x] Estilizar Nome
             -[x] Exibir Tipo
             -[x] Estilizar Tipo
-    -[ ] Estilizar algo que fique faltando nesta tela Home
+    -[x] Estilizar algo que fique faltando nesta tela Home
     -[ ] Criar Efeito Hover ao passar o mouse sobre os Cards
 -Página Individual
     -[ ] Planejar Pagina Individual

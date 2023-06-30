@@ -80,12 +80,17 @@
    }
    .caixa-principal{
     width: 50vw;
+    max-width: 50vw;
     background-color: white;
     margin:0 auto;
 }
 .lista-pokemon{
-    text-align: center ;
-
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
 }
 </style>
 

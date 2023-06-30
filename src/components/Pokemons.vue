@@ -1,5 +1,7 @@
 <template>
-    <li class="container-pokemon" v-for="indice in IndiceDeBusca" :key="indice" >
+    <li class="container-pokemon" v-for="indice in IndiceDeBusca" :key="indice" 
+    :style="{ transform: `translateY(${yOffset}px)` }"
+    @mouseover="InteracaoDeEstilo">
         <img class="imagem-pokemon" :src="PokemonImagens[indice]" />
         <p class="numero-pokemon">Nº{{ PokemonIds[indice] }}</p>
         <p class="nome-pokemon">{{ PokemonNames[indice] }}</p>
@@ -8,10 +10,11 @@
             <div class="tipo2" :class="PokemonType2[indice]"><span>{{ PokemonType2[indice]}}</span></div>
         </div>
     </li>
+
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, ref } from 'vue';
 import axios from 'axios';
 
 
@@ -26,9 +29,22 @@ export default defineComponent({
             PokemonNames: [''],
             PokemonType1: [''],
             PokemonType2: ['']
-
         }
-    },
+    },setup() {
+    const yOffset = ref(0);
+
+    const InteracaoDeEstilo = () => {
+      yOffset.value = -5;
+      setTimeout(() => {
+        yOffset.value = 0;
+      }, 5000); // 5 segundos (5000 milissegundos)
+    };
+
+    return {
+      yOffset,
+      InteracaoDeEstilo,
+    };
+  },
     mounted() {
         for(let i = 0; i < this.LimitadorPokemon; i++){
             this.IndiceDeBusca[i] = i
@@ -56,17 +72,10 @@ export default defineComponent({
 .container-pokemon{
     margin-top: 50px;
     background-color: white;
-    max-width: 220px;
-    width: calc(48vw /4);
-    border: 8px solid white;
+    width: 10vw;
+    border: 14px solid white;
     box-sizing: border-box;
-    display: inline-block;
     font-family: "Flexo-Regular";
-}
-.container-pokemon:hover{
-    position: relative;
-    top: -5px;
-    cursor: pointer;  
 }
 .imagem-pokemon{
     background-color: #F2F2F2;
@@ -121,10 +130,12 @@ text-transform: uppercase;
 
 
 
-
 /* Cores de acordo com os types */
+.tipo2{
+    background-color: rgba(0, 0, 0, 0);
+}
 .steel {
-	background-color: #9eb7b8;
+	background-color: #9eb7b8 ;
 }
 .fire {
     color: white;
