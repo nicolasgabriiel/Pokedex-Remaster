@@ -24,8 +24,8 @@
             -[x] Estilizar Número
             -[x] Exibir Nome
             -[x] Estilizar Nome
-            -[ ] Exibir Tipo
-            -[ ] Estilizar Tipo
+            -[x] Exibir Tipo
+            -[x] Estilizar Tipo
     -[ ] Estilizar algo que fique faltando nesta tela Home
     -[ ] Criar Efeito Hover ao passar o mouse sobre os Cards
 -Página Individual
