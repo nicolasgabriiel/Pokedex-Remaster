@@ -27,13 +27,22 @@
             -[x] Exibir Tipo
             -[x] Estilizar Tipo
     -[x] Estilizar algo que fique faltando nesta tela Home
-    -[ ] Criar Efeito Hover ao passar o mouse sobre os Cards
+    -[x] Criar Efeito Hover ao passar o mouse sobre os Cards
+-Botão de Ver mais
+    -[ ] Criar Lógica para um Botão de Ver mais Pokemons
+    -[ ] Fazer com que a medida que o scrool do mouse seja usado, mais pokemons sejam carregados na tela
 -Página Individual
-    -[ ] Planejar Pagina Individual
+    -[ ] Planejar toda Pagina Individual
+    -[ ] Criar Logica com o VueX pra saber qual pokemon foi clicado
+    -[ ] Criar Nova Página de Pokemon Individual
+    -[ ] Puxar os dados da API de acordo com qual pokemon foi selecionado
 
 -Finalizações
     -[ ] Escrever um bom Readme sobre este Projeto
 
+-Bônus
+    -[ ] Filtros de Busca por tipo
+    -[ ] Filtro de Busca por nome
 -Desafios
     -[ ] Aplicar bons commits ao longo desse projeto. Bem detalhados e explicativos.
 
