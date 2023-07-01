@@ -1,7 +1,5 @@
 <template>
-    <li class="container-pokemon" v-for="indice in IndiceDeBusca" :key="indice" 
-    :style="{ transform: `translateY(${yOffset}px)` }"
-    @mouseover="InteracaoDeEstilo">
+    <li class="container-pokemon" v-for="indice in IndiceDeBusca" :key="indice">
         <img class="imagem-pokemon" :src="PokemonImagens[indice]" />
         <p class="numero-pokemon">Nº{{ PokemonIds[indice] }}</p>
         <p class="nome-pokemon">{{ PokemonNames[indice] }}</p>
@@ -14,7 +12,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue';
+import { defineComponent } from 'vue';
 import axios from 'axios';
 
 
@@ -30,21 +28,15 @@ export default defineComponent({
             PokemonType1: [''],
             PokemonType2: ['']
         }
-    },setup() {
-    const yOffset = ref(0);
-
-    const InteracaoDeEstilo = () => {
-      yOffset.value = -5;
-      setTimeout(() => {
-        yOffset.value = 0;
-      }, 5000); // 5 segundos (5000 milissegundos)
-    };
-
-    return {
-      yOffset,
-      InteracaoDeEstilo,
-    };
-  },
+    },methods:{
+        changePosition(event: Event) {
+      const mouseEvent = event as MouseEvent;
+      const targetElement = mouseEvent.target as HTMLElement | null;
+      if (targetElement) {
+        targetElement.style.transform = 'translateY(-5px)';
+      }
+    },
+    },
     mounted() {
         for(let i = 0; i < this.LimitadorPokemon; i++){
             this.IndiceDeBusca[i] = i
@@ -58,7 +50,6 @@ export default defineComponent({
         const types = DataPokemon.types.map((typeInfo: { type: { name: string } }) => typeInfo.type.name)
         this.PokemonType1[i] = types[0]
         this.PokemonType2[i] = types[1]
-        console.log(this.PokemonType1[i],this.PokemonType2[i] )
       })
       .catch(error => {
         console.error(error);
@@ -76,6 +67,11 @@ export default defineComponent({
     border: 14px solid white;
     box-sizing: border-box;
     font-family: "Flexo-Regular";
+    transition: transform 0.2s ease;
+    cursor: pointer;
+}
+.container-pokemon:hover{
+    transform: translateY(-5px);
 }
 .imagem-pokemon{
     background-color: #F2F2F2;
