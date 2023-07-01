@@ -8,6 +8,7 @@
             <div class="tipo2" :class="PokemonType2[indice]"><span>{{ PokemonType2[indice]}}</span></div>
         </div>
     </li>
+    <button @click="verMais">Ver Mais</button>
 
 </template>
 
@@ -20,7 +21,7 @@ export default defineComponent({
     name: 'Pokemons-Component',
     data(){
         return{
-            LimitadorPokemon: 100,
+            LimitadorPokemon: 10,
             IndiceDeBusca: [] as number[],
             PokemonImagens: [''],
             PokemonIds: [''],
@@ -29,15 +30,12 @@ export default defineComponent({
             PokemonType2: ['']
         }
     },methods:{
-        changePosition(event: Event) {
-      const mouseEvent = event as MouseEvent;
-      const targetElement = mouseEvent.target as HTMLElement | null;
-      if (targetElement) {
-        targetElement.style.transform = 'translateY(-5px)';
-      }
-    },
-    },
-    mounted() {
+        verMais(){
+            this.LimitadorPokemon = this.LimitadorPokemon +10
+            this.TrazerPokemons()
+            console.log(this.LimitadorPokemon)
+        },
+        TrazerPokemons(){
         for(let i = 0; i < this.LimitadorPokemon; i++){
             this.IndiceDeBusca[i] = i
             let idPokemon = i +1
@@ -56,6 +54,10 @@ export default defineComponent({
       });
   }
 }
+    },
+    mounted() {
+        this.TrazerPokemons()
+       }
 })
 </script>
 

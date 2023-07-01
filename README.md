@@ -30,6 +30,7 @@
     -[x] Criar Efeito Hover ao passar o mouse sobre os Cards
 -Botão de Ver mais
     -[ ] Criar Lógica para um Botão de Ver mais Pokemons
+    -[ ] Estilizar Botão
     -[ ] Fazer com que a medida que o scrool do mouse seja usado, mais pokemons sejam carregados na tela
 -Página Individual
     -[ ] Planejar toda Pagina Individual
@@ -39,6 +40,7 @@
 
 -Finalizações
     -[ ] Escrever um bom Readme sobre este Projeto
+    -[ ] Refatorar o Código e deixá-lo mais limpo e agradável
 
 -Bônus
     -[ ] Filtros de Busca por tipo
