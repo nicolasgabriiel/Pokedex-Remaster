@@ -29,9 +29,9 @@
     -[x] Estilizar algo que fique faltando nesta tela Home
     -[x] Criar Efeito Hover ao passar o mouse sobre os Cards
 -Botão de Ver mais
-    -[ ] Criar Lógica para um Botão de Ver mais Pokemons
+    -[x] Criar Lógica para um Botão de Ver mais Pokemons
+    -[x] Fazer com que a medida que o scrool do mouse seja usado, mais pokemons sejam carregados na tela
     -[ ] Estilizar Botão
-    -[ ] Fazer com que a medida que o scrool do mouse seja usado, mais pokemons sejam carregados na tela
 -Página Individual
     -[ ] Planejar toda Pagina Individual
     -[ ] Criar Logica com o VueX pra saber qual pokemon foi clicado

@@ -8,12 +8,12 @@
             <div class="tipo2" :class="PokemonType2[indice]"><span>{{ PokemonType2[indice]}}</span></div>
         </div>
     </li>
-    <button @click="verMais">Ver Mais</button>
+    <button @click="verMais" :class="{hide: !BotaoVisivel}" >Ver Mais</button>
 
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, onMounted } from 'vue';
 import axios from 'axios';
 
 
@@ -21,19 +21,27 @@ export default defineComponent({
     name: 'Pokemons-Component',
     data(){
         return{
-            LimitadorPokemon: 10,
+            LimitadorPokemon: 30,
             IndiceDeBusca: [] as number[],
             PokemonImagens: [''],
             PokemonIds: [''],
             PokemonNames: [''],
             PokemonType1: [''],
-            PokemonType2: ['']
+            PokemonType2: [''],
+            //Botão
+            BotaoVisivel: true,
+            CarregamentoAutomatico: false
         }
     },methods:{
         verMais(){
-            this.LimitadorPokemon = this.LimitadorPokemon +10
+        if(this.LimitadorPokemon < 1010){
+            this.LimitadorPokemon = this.LimitadorPokemon +5
+        }else{
+            this.LimitadorPokemon = 1010
+        }
             this.TrazerPokemons()
-            console.log(this.LimitadorPokemon)
+            this.BotaoVisivel = false
+            this.CarregamentoAutomatico = true
         },
         TrazerPokemons(){
         for(let i = 0; i < this.LimitadorPokemon; i++){
@@ -53,11 +61,27 @@ export default defineComponent({
         console.error(error);
       });
   }
-}
+},
+handleScroll() {
+      const scrollPosition = window.pageYOffset;
+      const windowHeight = window.innerHeight;
+      const fullHeight = document.documentElement.scrollHeight;
+      if (this.CarregamentoAutomatico == true && scrollPosition + windowHeight >= fullHeight) {
+        this.verMais();
+      }
+    },
+    meuMetodo() {
+      // Lógica do método que será chamado quando o scroll atingir um ponto específico
+      console.log('Método chamado quando o scroll atingir um ponto específico');
+    },
     },
     mounted() {
         this.TrazerPokemons()
-       }
+        window.addEventListener('scroll', this.handleScroll);
+  },
+  beforeUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  },
 })
 </script>
 
@@ -198,6 +222,9 @@ text-transform: uppercase;
     color: white;
 }
 .undefined{
+    display: none !important;
+}
+.hide{
     display: none !important;
 }
 </style>
