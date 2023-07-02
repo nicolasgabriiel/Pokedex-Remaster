@@ -8,7 +8,7 @@
             <div class="tipo2" :class="PokemonType2[indice]"><span>{{ PokemonType2[indice]}}</span></div>
         </div>
     </li>
-    <button @click="verMais" :class="{hide: !BotaoVisivel}" >Ver Mais</button>
+    <button @click="verMais" :class="{hide: !BotaoVisivel}" class="botao-ver-mais" >Carregar Mais Pokémons</button>
 
 </template>
 
@@ -69,10 +69,6 @@ handleScroll() {
       if (this.CarregamentoAutomatico == true && scrollPosition + windowHeight >= fullHeight) {
         this.verMais();
       }
-    },
-    meuMetodo() {
-      // Lógica do método que será chamado quando o scroll atingir um ponto específico
-      console.log('Método chamado quando o scroll atingir um ponto específico');
     },
     },
     mounted() {
@@ -143,6 +139,25 @@ text-transform: uppercase;
 .tipo1{margin:5px 0px 5px 5%;}
 .tipo2{margin:5px 5px 5px 2px;}
 .imagem-pokemon{cursor: pointer;}
+.botao-ver-mais{
+    background-color: #30a7d7;
+    color: #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 0.75em 1.25em 0.65em;
+    text-align: center;
+    font-family: "Flexo-Regular";
+    font-size: 14px;
+    font-weight: bold;
+    border:  0;
+    margin: 30px 0 50px;
+    box-shadow: 10px 10px 8px -7px rgba(3,10,125,0.4);
+    transition: 0.2s;
+}
+.botao-ver-mais:hover{
+    scale: 1.02;
+    background-color: #1679a0;
+}
 
 
 
