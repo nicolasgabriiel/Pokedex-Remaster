@@ -1,5 +1,6 @@
 <template>
     <li class="container-pokemon" v-for="indice in IndiceDeBusca" :key="indice">
+        <router-link class="customer" :to="{ name: 'pokemon', params: { id: indice + 1 } }">
         <img class="imagem-pokemon" :src="PokemonImagens[indice]" />
         <p class="numero-pokemon">Nº{{ PokemonIds[indice] }}</p>
         <p class="nome-pokemon">{{ PokemonNames[indice] }}</p>
@@ -7,13 +8,14 @@
             <div class="tipo1" :class="PokemonType1[indice]"><span>{{ PokemonType1[indice] }}</span></div>
             <div class="tipo2" :class="PokemonType2[indice]"><span>{{ PokemonType2[indice]}}</span></div>
         </div>
+    </router-link>
     </li>
     <button @click="verMais" :class="{hide: !BotaoVisivel}" class="botao-ver-mais" >Carregar Mais Pokémons</button>
-
+    
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted } from 'vue';
+import { defineComponent } from 'vue';
 import axios from 'axios';
 
 
@@ -91,6 +93,9 @@ handleScroll() {
     font-family: "Flexo-Regular";
     transition: transform 0.2s ease;
     cursor: pointer;
+}
+.customer{
+    text-decoration: none;
 }
 .container-pokemon:hover{
     transform: translateY(-5px);

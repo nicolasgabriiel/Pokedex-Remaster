@@ -31,11 +31,11 @@
 -Botão de Ver mais
     -[x] Criar Lógica para um Botão de Ver mais Pokemons
     -[x] Fazer com que a medida que o scrool do mouse seja usado, mais pokemons sejam carregados na tela
-    -[ ] Estilizar Botão
+    -[x] Estilizar Botão
 -Página Individual
     -[ ] Planejar toda Pagina Individual
-    -[ ] Criar Logica com o VueX pra saber qual pokemon foi clicado
-    -[ ] Criar Nova Página de Pokemon Individual
+    -[x] Criar Logica com o VueRouter pra saber qual pokemon foi clicado
+    -[x] Criar Nova Página de Pokemon Individual
     -[ ] Puxar os dados da API de acordo com qual pokemon foi selecionado
 
 -Finalizações

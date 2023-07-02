@@ -7,12 +7,11 @@ const routes: Array<RouteRecordRaw> = [
     name: 'home',
     component: HomeView
   },
-  // EXEMPLO DE GRAVAÇÃO DE ROTA
-  // {
-  //   path: '/about',
-  //   name: 'about',
-  //   component: () => import('../views/AboutView.vue')
-  // }
+  {
+    path: '/pokemon/:id',
+    name: 'pokemon',
+    component: () => import('../views/Individual.vue')
+  }
 ]
 
 const router = createRouter({
