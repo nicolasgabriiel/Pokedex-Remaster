@@ -96,6 +96,7 @@ handleScroll() {
 }
 .customer{
     text-decoration: none;
+    color: black;
 }
 .container-pokemon:hover{
     transform: translateY(-5px);

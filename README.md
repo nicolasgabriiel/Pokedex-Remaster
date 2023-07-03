@@ -36,7 +36,30 @@
     -[ ] Planejar toda Pagina Individual
     -[x] Criar Logica com o VueRouter pra saber qual pokemon foi clicado
     -[x] Criar Nova Página de Pokemon Individual
-    -[ ] Puxar os dados da API de acordo com qual pokemon foi selecionado
+        -Estruturar a Página
+            -[ ]Estruturar Header
+            -[ ]Estilizar Header
+            -[ ]Estruturar o container principal
+            -[ ]Criar Componente de Carrossel de Imagens
+                -[ ]Puxar Imagens pela API
+                -[ ]Criar Lógica de Troca de Imagens
+                -[ ]Estilizar
+            -[ ]Criar Componente de Dados
+                -[ ] Exibir Dados
+                -[ ] Estilizar Dados
+            -[ ]Estruturar os tipos na tela
+                -[ ]Estilizar 
+            -[ ]Estruturar os Weaknesses
+                -[ ]Estilizar 
+            -[ ]Criar Componentes de Status
+                -[ ]Estruturar
+                -[ ]Trazer dados
+                -[ ]Estilizar
+            -[ ]Criar Componente de Evolução
+                -[ ]Estruturar
+                -[ ]Trazer dados
+                -[ ]Estilizar
+
 
 -Finalizações
     -[ ] Escrever um bom Readme sobre este Projeto
