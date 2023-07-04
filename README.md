@@ -36,9 +36,9 @@
     -[ ] Planejar toda Pagina Individual
     -[x] Criar Logica com o VueRouter pra saber qual pokemon foi clicado
     -[x] Criar Nova Página de Pokemon Individual
-        -[ ] Criar Componente dos dos status Pokemon
+        -[x] Criar Componente dos dos status Pokemon
         -Estruturar a Página
-            -[ ]Estruturar Header
+            -[x]Estruturar Header
             -[ ]Estilizar Header
             -[ ]Estruturar o container principal
             -[ ]Criar Componente de Carrossel de Imagens

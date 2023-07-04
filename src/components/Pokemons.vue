@@ -2,7 +2,7 @@
     <li class="container-pokemon" v-for="indice in IndiceDeBusca" :key="indice">
         <router-link class="customer" :to="{ name: 'pokemon', params: { id: indice + 1 } }">
         <img class="imagem-pokemon" :src="PokemonImagens[indice]" />
-        <p class="numero-pokemon">Nº{{ PokemonIds[indice] }}</p>
+        <p class="numero-pokemon">Nº {{ PokemonIds[indice] }}</p>
         <p class="nome-pokemon">{{ PokemonNames[indice] }}</p>
         <div class="container-tipo">
             <div class="tipo1" :class="PokemonType1[indice]"><span>{{ PokemonType1[indice] }}</span></div>
@@ -53,7 +53,7 @@ export default defineComponent({
       .then(Data => {
         let DataPokemon = Data.data;
         this.PokemonImagens[i] = DataPokemon.sprites.other['official-artwork'].front_default
-        this.PokemonIds[i] =  DataPokemon.id.toString().padStart(3, '0')
+        this.PokemonIds[i] =  DataPokemon.id.toString().padStart(4, '0')
         this.PokemonNames[i] = DataPokemon.name
         const types = DataPokemon.types.map((typeInfo: { type: { name: string } }) => typeInfo.type.name)
         this.PokemonType1[i] = types[0]
@@ -87,8 +87,8 @@ handleScroll() {
 .container-pokemon{
     margin-top: 50px;
     background-color: white;
-    width: 10vw;
-    border: 14px solid white;
+    width: calc(48vw/4);
+    border: 8px solid white;
     box-sizing: border-box;
     font-family: "Flexo-Regular";
     transition: transform 0.2s ease;

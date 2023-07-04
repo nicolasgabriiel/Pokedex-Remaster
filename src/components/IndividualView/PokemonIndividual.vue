@@ -1,5 +1,8 @@
 <template>
-    <header>ola eu sou o pokemon {{ dataPokemon.name }}</header>
+    <header>
+        <h1>{{ nomePokemon }}</h1>
+        <h2>{{ idPokemonCompleto }}</h2>
+    </header>
 </template>
 
 <script lang="ts">
@@ -10,7 +13,9 @@ export default defineComponent({
     data() {
     return {
       idPokemon: '',
-      dataPokemon: []
+      dataPokemon: [],
+      nomePokemon:'',
+      idPokemonCompleto: ''
     }
   },
   mounted() {
@@ -20,8 +25,10 @@ export default defineComponent({
     axios.get(`https://pokeapi.co/api/v2/pokemon/${this.idPokemon}`)
       .then(Data => {
         let DataPokemon = Data.data;
-        this.dataPokemon = DataPokemon
-        console.log(DataPokemon)
+        this.dataPokemon = DataPokemon;
+        this.nomePokemon ='Nº ' + DataPokemon.id.toString().padStart(4, '0')
+        this.idPokemonCompleto = DataPokemon.name.charAt(0).toUpperCase() + DataPokemon.name.slice(1)
+
       })
       .catch(error => {
         console.error(error);
