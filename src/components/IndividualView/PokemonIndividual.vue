@@ -6,7 +6,9 @@
     <main class="corpo">
         <div class="container-principal">
             <div class="parte-esquerda">
-                <div class="carrosel-imagens"></div>
+                <div class="carrosel-imagens">
+                    <CarrosselDeImagens/>
+                </div>
                 <div class="status-pokemon"></div>
             </div>
             <div class="parte-direita">
@@ -25,8 +27,12 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import axios from 'axios';
+import CarrosselDeImagens from './CarrosselDeImagens.vue';
 export default defineComponent({
     name: 'Pokemon-Indiviual-Status',
+    components:{
+        CarrosselDeImagens
+    },
     data() {
         return {
             idPokemon: '',
@@ -38,7 +44,6 @@ export default defineComponent({
     mounted() {
         const id = this.$route.params.id;
         this.idPokemon = id.toString()
-        console.log(this.idPokemon)
         axios.get(`https://pokeapi.co/api/v2/pokemon/${this.idPokemon}`)
             .then(Data => {
                 let DataPokemon = Data.data;

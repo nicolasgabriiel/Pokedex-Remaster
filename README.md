@@ -42,7 +42,7 @@
             -[x]Estilizar Header
             -[x]Estruturar o container principal
             -[x]Criar Componente de Carrossel de Imagens
-                -[ ]Puxar Imagens pela API
+                -[x]Puxar Imagens pela API
                 -[ ]Criar Lógica de Troca de Imagens
                 -[ ]Estilizar
             -[ ]Criar Componente de Dados
