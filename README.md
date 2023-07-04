@@ -39,7 +39,7 @@
         -[x] Criar Componente dos dos status Pokemon
         -Estruturar a Página
             -[x]Estruturar Header
-            -[ ]Estilizar Header
+            -[x]Estilizar Header
             -[ ]Estruturar o container principal
             -[ ]Criar Componente de Carrossel de Imagens
                 -[ ]Puxar Imagens pela API

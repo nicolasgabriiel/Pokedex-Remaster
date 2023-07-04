@@ -1,5 +1,5 @@
 <template>
-    <header>
+    <header class="header-pokemon">
         <h1>{{ nomePokemon }}</h1>
         <h2>{{ idPokemonCompleto }}</h2>
     </header>
@@ -26,8 +26,8 @@ export default defineComponent({
       .then(Data => {
         let DataPokemon = Data.data;
         this.dataPokemon = DataPokemon;
-        this.nomePokemon ='Nº ' + DataPokemon.id.toString().padStart(4, '0')
-        this.idPokemonCompleto = DataPokemon.name.charAt(0).toUpperCase() + DataPokemon.name.slice(1)
+        this.idPokemonCompleto ='Nº ' + DataPokemon.id.toString().padStart(4, '0')
+        this.nomePokemon = DataPokemon.name.charAt(0).toUpperCase() + DataPokemon.name.slice(1)
 
       })
       .catch(error => {
@@ -36,3 +36,18 @@ export default defineComponent({
   }
 })
 </script>
+
+<style scoped>
+.header-pokemon{
+    display: flex;
+    flex-direction: row;
+    font-size: 26px;
+    font-weight: bold;
+    justify-content: center;
+    padding: 40px 0;
+}
+.header-pokemon h2{
+    color: #616161;
+    margin: 0 0 0 15px;
+}
+</style>
