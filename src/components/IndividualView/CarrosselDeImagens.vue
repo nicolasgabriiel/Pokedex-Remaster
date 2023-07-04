@@ -1,7 +1,8 @@
 <template lang="">
     <div class='container-de-imagem'>
-        <div class='imagem-principal' :style="`background-image: url(${ImagemAtiva})`">
-            <button class="botão de Troca" @click="trocaDeImagem" >Aqui</button>
+        <div class='imagem-principal' :style="`background-image: url(${imagemAtiva})`">
+            <button class="botao" @click="trocaDeImagem" >&lt;</button>
+            <button class="botao" @click="trocaDeImagem" >></button>
         </div>
     </div>
 </template>
@@ -12,8 +13,9 @@ export default defineComponent({
     name: 'Carrossel-de-Imagens',
     data(){
         return{
-            Imagens: [],
-            ImagemAtiva: "",
+            imagemN: "",
+            imagemS: "",
+            imagemAtiva: "",
         }
     },
     mounted(){
@@ -21,22 +23,22 @@ export default defineComponent({
         axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`)
             .then(Data => {
                 let DataPokemon = Data.data;
-                this.Imagens[0] = DataPokemon.sprites.other['official-artwork'].front_default;
-                this.Imagens[1] = DataPokemon.sprites.other['official-artwork'].front_shiny;
-                this.ImagemAtiva = this.Imagens[0].toString()
+                this.imagemN = DataPokemon.sprites.other['official-artwork'].front_default;
+                this.imagemS = DataPokemon.sprites.other['official-artwork'].front_shiny;
+                this.imagemAtiva = this.imagemN.toString()
+                console.log(this.imagemAtiva)
             })
             .catch(error => {
                 console.error(error);
             });
 
-            this.ImagemAtiva = this.Imagens[0]
 } ,
     methods:{
         trocaDeImagem(){
-            if (this.ImagemAtiva == this.Imagens[0]){
-                this.ImagemAtiva = this.Imagens[1]
+            if (this.imagemAtiva == this.imagemN){
+                this.imagemAtiva = this.imagemS
             }else{
-                this.ImagemAtiva = this.Imagens[0]
+                this.imagemAtiva = this.imagemN
             }
         }
     }
@@ -45,9 +47,39 @@ export default defineComponent({
 </script>
 <style scoped>
     .imagem-principal{
-        width: 200px;
-        height: 200px;
-        background-color: red;
+        width: calc(25vw - 40px);
+        height: calc(25vw - 40px);
+        margin: 20px;
+        background-color: #f2f2f2;
         background-size: contain;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: 0.2s;
+        
+    }
+    .botao{
+        color: black;
+        font-weight: bold;
+        font-size: 20px;
+        border-radius: 200px;
+        background-color: gray;
+        border: none;
+        transition: 0.2s;
+        cursor: pointer;
+        opacity: 0;
+        margin: 4px;
+    }
+    .imagem-principal:hover {
+        cursor: pointer;
+        opacity: .7;
+    }
+    .imagem-principal:hover .botao{
+        opacity: 1;
+    }
+    .botao:hover {
+        opacity: 1;
+        background-color: black;
+        color: white;
     }
 </style>

@@ -44,7 +44,7 @@
             -[x]Criar Componente de Carrossel de Imagens
                 -[x]Puxar Imagens pela API
                 -[x]Criar Lógica de Troca de Imagens
-                -[ ]Estilizar
+                -[x]Estilizar
             -[ ]Criar Componente de Dados
                 -[ ] Exibir Dados
                 -[ ] Estilizar Dados

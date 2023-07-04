@@ -23,7 +23,7 @@ export default defineComponent({
     name: 'Pokemons-Component',
     data(){
         return{
-            LimitadorPokemon: 30,
+            LimitadorPokemon: 32,
             IndiceDeBusca: [] as number[],
             PokemonImagens: [''],
             PokemonIds: [''],
@@ -37,7 +37,7 @@ export default defineComponent({
     },methods:{
         verMais(){
         if(this.LimitadorPokemon < 1010){
-            this.LimitadorPokemon = this.LimitadorPokemon +5
+            this.LimitadorPokemon = this.LimitadorPokemon +4
         }else{
             this.LimitadorPokemon = 1010
         }
@@ -103,7 +103,6 @@ handleScroll() {
 }
 .imagem-pokemon{
     background-color: #F2F2F2;
-    height: 205px;
     width: 100%;
     margin: 0 auto;
     border-radius: 10px;
