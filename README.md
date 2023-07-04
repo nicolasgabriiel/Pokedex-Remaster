@@ -41,7 +41,7 @@
             -[x]Estruturar Header
             -[x]Estilizar Header
             -[x]Estruturar o container principal
-            -[ ]Criar Componente de Carrossel de Imagens
+            -[x]Criar Componente de Carrossel de Imagens
                 -[ ]Puxar Imagens pela API
                 -[ ]Criar Lógica de Troca de Imagens
                 -[ ]Estilizar
