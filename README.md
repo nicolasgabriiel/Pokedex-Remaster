@@ -43,7 +43,7 @@
             -[x]Estruturar o container principal
             -[x]Criar Componente de Carrossel de Imagens
                 -[x]Puxar Imagens pela API
-                -[ ]Criar Lógica de Troca de Imagens
+                -[x]Criar Lógica de Troca de Imagens
                 -[ ]Estilizar
             -[ ]Criar Componente de Dados
                 -[ ] Exibir Dados
