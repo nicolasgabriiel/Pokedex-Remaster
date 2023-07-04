@@ -40,7 +40,7 @@
         -Estruturar a Página
             -[x]Estruturar Header
             -[x]Estilizar Header
-            -[ ]Estruturar o container principal
+            -[x]Estruturar o container principal
             -[ ]Criar Componente de Carrossel de Imagens
                 -[ ]Puxar Imagens pela API
                 -[ ]Criar Lógica de Troca de Imagens

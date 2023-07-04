@@ -3,42 +3,59 @@
         <h1>{{ nomePokemon }}</h1>
         <h2>{{ idPokemonCompleto }}</h2>
     </header>
+    <main class="corpo">
+        <div class="container-principal">
+            <div class="parte-esquerda">
+                <div class="carrosel-imagens"></div>
+                <div class="status-pokemon"></div>
+            </div>
+            <div class="parte-direita">
+                <div class="descricao"></div>
+                <div class="estatisticas"></div>
+                <div class="tipos"></div>
+                <div class="fraquezas"></div>
+            </div>
+        </div>
+        <div class="container-evolucoes">
+
+        </div>
+    </main>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 import axios from 'axios';
 export default defineComponent({
-    name:'Pokemon-Indiviual-Status',
+    name: 'Pokemon-Indiviual-Status',
     data() {
-    return {
-      idPokemon: '',
-      dataPokemon: [],
-      nomePokemon:'',
-      idPokemonCompleto: ''
-    }
-  },
-  mounted() {
-    const id = this.$route.params.id;
-    this.idPokemon = id.toString()
-    console.log(this.idPokemon)
-    axios.get(`https://pokeapi.co/api/v2/pokemon/${this.idPokemon}`)
-      .then(Data => {
-        let DataPokemon = Data.data;
-        this.dataPokemon = DataPokemon;
-        this.idPokemonCompleto ='Nº ' + DataPokemon.id.toString().padStart(4, '0')
-        this.nomePokemon = DataPokemon.name.charAt(0).toUpperCase() + DataPokemon.name.slice(1)
+        return {
+            idPokemon: '',
+            dataPokemon: [],
+            nomePokemon: '',
+            idPokemonCompleto: ''
+        }
+    },
+    mounted() {
+        const id = this.$route.params.id;
+        this.idPokemon = id.toString()
+        console.log(this.idPokemon)
+        axios.get(`https://pokeapi.co/api/v2/pokemon/${this.idPokemon}`)
+            .then(Data => {
+                let DataPokemon = Data.data;
+                this.dataPokemon = DataPokemon;
+                this.idPokemonCompleto = 'Nº ' + DataPokemon.id.toString().padStart(4, '0')
+                this.nomePokemon = DataPokemon.name.charAt(0).toUpperCase() + DataPokemon.name.slice(1)
 
-      })
-      .catch(error => {
-        console.error(error);
-      });
-  }
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    }
 })
 </script>
 
 <style scoped>
-.header-pokemon{
+.header-pokemon {
     display: flex;
     flex-direction: row;
     font-size: 26px;
@@ -46,7 +63,8 @@ export default defineComponent({
     justify-content: center;
     padding: 40px 0;
 }
-.header-pokemon h2{
+
+.header-pokemon h2 {
     color: #616161;
     margin: 0 0 0 15px;
 }
