@@ -68,7 +68,8 @@ handleScroll() {
       const scrollPosition = window.pageYOffset;
       const windowHeight = window.innerHeight;
       const fullHeight = document.documentElement.scrollHeight;
-      if (this.CarregamentoAutomatico == true && scrollPosition + windowHeight >= fullHeight) {
+      if (this.CarregamentoAutomatico == true && scrollPosition + windowHeight >= fullHeight - 1) {
+        console.log('bateu aqui')
         this.verMais();
       }
     },
