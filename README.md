@@ -52,7 +52,7 @@
                 -[ ]Estilizar 
             -[ ]Estruturar os Weaknesses
                 -[ ]Estilizar 
-            -[ ]Criar Componentes de Status
+            -[x]Criar Componentes de Status
                 -[ ]Estruturar
                 -[ ]Trazer dados
                 -[ ]Estilizar
