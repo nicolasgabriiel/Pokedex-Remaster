@@ -9,7 +9,9 @@
                 <div class="carrosel-imagens">
                     <CarrosselDeImagens/>
                 </div>
-                <div class="status-pokemon"></div>
+                <div class="status-pokemon">
+                    <StatsPokemon/>
+                </div>
             </div>
             <div class="parte-direita">
                 <div class="descricao"></div>
@@ -28,10 +30,12 @@
 import { defineComponent } from 'vue'
 import axios from 'axios';
 import CarrosselDeImagens from './CarrosselDeImagens.vue';
+import StatsPokemon from './StatsPokemon.vue';
 export default defineComponent({
     name: 'Pokemon-Indiviual-Status',
     components:{
-        CarrosselDeImagens
+        CarrosselDeImagens,
+        StatsPokemon
     },
     data() {
         return {

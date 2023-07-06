@@ -56,6 +56,7 @@ export default defineComponent({
         justify-content: space-between;
         align-items: center;
         transition: 0.2s;
+        border-radius: 5px;
         
     }
     .botao{
