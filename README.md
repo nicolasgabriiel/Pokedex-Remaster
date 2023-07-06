@@ -55,7 +55,7 @@
             -[x]Criar Componentes de Status
                 -[x]Estruturar
                 -[x]Trazer dados
-                -[ ]Estilizar
+                -[x]Estilizar
             -[ ]Criar Componente de Evolução
                 -[ ]Estruturar
                 -[ ]Trazer dados

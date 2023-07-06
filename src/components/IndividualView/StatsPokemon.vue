@@ -1,7 +1,7 @@
 <template>
-    <div>
-        <h2>Stats</h2>
+    
         <div class="container-stats">
+            <h2>Stats</h2>
             <ul >
                 <li>
                     <div class="coluna-branca">
@@ -58,7 +58,6 @@
                 </li>
             </ul>
         </div>
-    </div>
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue';
@@ -96,30 +95,41 @@ export default defineComponent({
 
 </script>
 <style>
+.container-stats{
+    background-color: #a4a4a4;
+    width: calc(25vw - 40px);
+    margin: 20px 20px 0 20px;
+    border-radius: 5px;
+}
+.container-stats h2{
+    text-align: center;
+    padding: 10px 0 5px;
+}
 .container-stats ul{
-    background-color: gray;
     display: flex; 
     flex-direction: row;
+    justify-content: space-around;
 }
 .container-stats ul li{
     margin: 5px;
 }
 
 .coluna-branca{
-    width: 55px;
+    width: 40px;
     height: 180px;
     background-color: white;
     display: flex;
     align-items: flex-end;
 }
 .coluna-azul{
-    width: 55px;
-    background-color: blue;
+    width: 40px;
+    background-color: #30a7d7;
 }
 .atributo{
     text-align: center;
     display: block;
     font-size: 10px;
-    max-width: 55px;
+    max-width: 40px;
+    margin-top: 10px;
 }
 </style>
