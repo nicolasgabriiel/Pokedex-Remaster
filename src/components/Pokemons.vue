@@ -23,7 +23,7 @@ export default defineComponent({
     name: 'Pokemons-Component',
     data(){
         return{
-            LimitadorPokemon: 307,
+            LimitadorPokemon: 16,
             IndiceDeBusca: [] as number[],
             PokemonImagens: [''],
             PokemonIds: [''],

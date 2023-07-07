@@ -7,8 +7,15 @@
             <div class="titulo">
               <h1>Pokédex</h1>
             </div>
-            <div class="busca_um"></div>
-            <div class="busca_dois"> </div>
+            <div class="busca_um">
+              <router-link class="customer" :to="{ name: 'pokemon', params: { id: idAnt },  query: { reload: true }}" key="reload">{{ idPokemonCompletoAnt }} {{ nomePokemonAnt }} </router-link>
+              <router-link class="customer" :to="{ name: 'pokemon', params: { id: idProx},  query: { reload: true }}" key="reload">{{ nomePokemonProx }} {{ idPokemonCompletoProx }}</router-link>
+            </div>
+            <div class="container_busca_dois">
+              <div class="busca_dois"> </div>
+              <div class="busca_dois"> </div>
+            </div>
+            
           </header><!--        Cabeçalho           -->
 
           <main><!--      Corpo Principal     -->
@@ -23,12 +30,68 @@
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue';
+import axios from 'axios';
 import PokemonIndividual from '../components/IndividualView/PokemonIndividual.vue'
 
 export default defineComponent({
     name:'PAGE-STATUS-POKE',
     components:{
         PokemonIndividual
+    },
+    mounted() {
+        this.trazerTodosOsPokemons()
+    },
+    data() {
+        return {
+            idPokemon: "",
+            idPokemonN: 0,
+            dataPokemon: [],
+            nomePokemonAnt: '',
+            nomePokemonProx: '',
+            idPokemonCompletoAnt: '',
+            idPokemonCompletoProx: '',
+            idAnt: 0,
+            idProx: 0
+        }
+    }, methods:{
+      trazerPokemonAnt(){
+        let id = this.$route.params.id;
+        this.idPokemon = id.toString();
+        this.idPokemonN = parseInt(this.idPokemon)
+        axios.get(`https://pokeapi.co/api/v2/pokemon/${this.idPokemonN -1}`)
+            .then(Data => {
+                let DataPokemon = Data.data;
+                this.dataPokemon = DataPokemon;
+                this.idAnt =  DataPokemon.id;
+                this.idPokemonCompletoAnt = 'Nº ' + DataPokemon.id.toString().padStart(4, '0')
+                this.nomePokemonAnt = DataPokemon.name.charAt(0).toUpperCase() + DataPokemon.name.slice(1)
+
+            })
+            .catch(error => {
+                console.error(error);
+            });
+      },
+      trazerPokemonProx(){
+        let id = this.$route.params.id;
+        this.idPokemon = id.toString();
+        this.idPokemonN = parseInt(this.idPokemon)
+        axios.get(`https://pokeapi.co/api/v2/pokemon/${this.idPokemonN +1}`)
+            .then(Data => {
+                let DataPokemon = Data.data;
+                this.dataPokemon = DataPokemon;
+                this.idProx =  DataPokemon.id;
+                this.idPokemonCompletoProx = 'Nº ' + DataPokemon.id.toString().padStart(4, '0')
+                this.nomePokemonProx = DataPokemon.name.charAt(0).toUpperCase() + DataPokemon.name.slice(1)
+
+            })
+            .catch(error => {
+                console.error(error);
+            });
+      },
+      trazerTodosOsPokemons(){
+        this.trazerPokemonAnt(),
+        this.trazerPokemonProx()
+      }
     }
 })
 </script>
@@ -71,12 +134,18 @@ export default defineComponent({
    background-color:#616161 ;
    margin:0 auto;
 }
+.container_busca_dois{
+  display: flex;
+  justify-content: space-between;
+}
+.busca_dois:first-child{
+  border-radius: 0 0 18px 0 ;
+}
 .busca_dois{
    width:20vw;
-   height: 18px;
+   height: 25px;
    background-color:#616161 ;
-   margin:0 auto;
-   border-radius: 0 0 18px 18px;
+   border-radius: 0 0 0 18px;
 }
 .caixa-principal{
 width: 50vw;
