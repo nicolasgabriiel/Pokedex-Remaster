@@ -33,7 +33,7 @@
     -[x] Fazer com que a medida que o scrool do mouse seja usado, mais pokemons sejam carregados na tela
     -[x] Estilizar Botão
 -Página Individual
-    -[ ] Planejar toda Pagina Individual
+    -[x] Planejar toda Pagina Individual
     -[x] Criar Logica com o VueRouter pra saber qual pokemon foi clicado
     -[x] Criar Nova Página de Pokemon Individual
         -[x] Criar Componente dos dos status Pokemon
@@ -60,7 +60,9 @@
                 -[ ]Estruturar
                 -[ ]Trazer dados
                 -[ ]Estilizar
-
+-Página Inicial
+    -[ ]Criar Filtro por tipo
+    -[ ]Criar Busca por nome ou número
 
 -Finalizações
     -[ ] Escrever um bom Readme sobre este Projeto
