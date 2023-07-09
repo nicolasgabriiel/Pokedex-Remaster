@@ -62,7 +62,7 @@
                 -[ ]Estilizar
 -Página Inicial
     -[ ]Criar Filtro por tipo
-    -[ ]Criar Busca por nome ou número
+    -[ ]Criar Busca por nome ou número 
 
 -Finalizações
     -[ ] Escrever um bom Readme sobre este Projeto

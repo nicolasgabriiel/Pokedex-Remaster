@@ -79,8 +79,6 @@ export default defineComponent({
                     let DataPokemon = Data.data;
                     this.statsPokemon[i] = DataPokemon.stats[i].base_stat
                     this.PixelPokemon[i] = (1/ (180 /this.statsPokemon[i]))*180
-                    console.log(this.PixelPokemon[i])
-
                 }
                 
             })

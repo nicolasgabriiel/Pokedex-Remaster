@@ -26,7 +26,6 @@ export default defineComponent({
                 this.imagemN = DataPokemon.sprites.other['official-artwork'].front_default;
                 this.imagemS = DataPokemon.sprites.other['official-artwork'].front_shiny;
                 this.imagemAtiva = this.imagemN.toString()
-                console.log(this.imagemAtiva)
             })
             .catch(error => {
                 console.error(error);

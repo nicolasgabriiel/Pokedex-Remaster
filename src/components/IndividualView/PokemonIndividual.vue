@@ -14,8 +14,12 @@
                 </div>
             </div>
             <div class="parte-direita">
-                <div class="descricao"></div>
-                <div class="estatisticas"></div>
+                <div class="descricao">
+                    <p> {{descricaoPokemon}}</p>
+                </div>
+                <div class="estatisticas">
+
+                </div>
                 <div class="tipos"></div>
                 <div class="fraquezas"></div>
             </div>
@@ -42,7 +46,9 @@ export default defineComponent({
             idPokemon: '',
             dataPokemon: [],
             nomePokemon: '',
-            idPokemonCompleto: ''
+            idPokemonCompleto: '',
+            nomeBusca: '',
+            descricaoPokemon: ''
         }
     },
     mounted() {
@@ -54,11 +60,26 @@ export default defineComponent({
                 this.dataPokemon = DataPokemon;
                 this.idPokemonCompleto = 'Nº ' + DataPokemon.id.toString().padStart(4, '0')
                 this.nomePokemon = DataPokemon.name.charAt(0).toUpperCase() + DataPokemon.name.slice(1)
+                this.nomeBusca = 'https://pokeapi.co/api/v2/pokemon-species/' + DataPokemon.name.toString()
 
             })
             .catch(error => {
                 console.error(error);
             });
+            axios.get(`${this.nomeBusca}`)
+            .then(Data => {
+                let DataPokemon = Data.data;
+                this.descricaoPokemon = DataPokemon.flavor_text_entries[0].flavor_text
+                console.log(DataPokemon)
+                console.log('https://pokeapi.co/api/v2/pokemon-species/charmander')
+                console.log(this.nomeBusca)
+
+                
+
+            })
+            .catch(error => {
+                console.error(error);
+            });    
     }
 })
 </script>
