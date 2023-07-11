@@ -133,6 +133,12 @@ export default defineComponent({
    height: 80px;
    background-color:#616161 ;
    margin:0 auto;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+}
+.busca_um .customer{
+  margin: auto 35px;
 }
 .container_busca_dois{
   display: flex;
@@ -143,7 +149,7 @@ export default defineComponent({
 }
 .busca_dois{
    width:20vw;
-   height: 25px;
+   height: 15px;
    background-color:#616161 ;
    border-radius: 0 0 0 18px;
 }
